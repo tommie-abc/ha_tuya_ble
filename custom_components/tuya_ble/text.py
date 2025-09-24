@@ -164,26 +164,7 @@ mapping: dict[str, TuyaBLECategoryTextMapping] = {
                         setter=set_fingerbot_program,
                     ),
                 ]
-            ),
-            **dict.fromkeys(
-                [
-                    "bs3ubslo"
-                ],  # Fingerbot Touch 2
-                [
-                    TuyaBLETextMapping(
-                        dp_id=109,
-                        description=TextEntityDescription(
-                            key="program",
-                            icon="mdi:repeat",
-                            pattern="^((\d{1,2}|100)(\/\d{1,2})?)(;((\d{1,2}|100)(\/\d{1,2})?))+$",
-                            entity_category=EntityCategory.CONFIG,
-                        ),
-                        is_available=is_fingerbot_in_program_mode,
-                        getter=get_fingerbot_program,
-                        setter=set_fingerbot_program,
-                    ),
-                ]
-            ),
+            )
         },
     ),
 }

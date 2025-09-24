@@ -47,12 +47,12 @@ _LOGGER = logging.getLogger(__name__)
 class TuyaBLEFingerbotInfo:
     switch: int
     mode: int
-    up_position: int
-    down_position: int
     hold_time: int
     reverse_positions: int
-    manual_control: int = 0
-    program: int = 0
+    up_position: int | None = None
+    down_position: int | None = None
+    manual_control: int | None = None
+    program: int  | None = None
 
 
 @dataclass
@@ -447,12 +447,8 @@ devices_database: dict[str, TuyaBLECategoryInfo] = {
                     fingerbot=TuyaBLEFingerbotInfo(
                         switch=1,
                         mode=101,
-                        up_position=106,
-                        down_position=102,
                         hold_time=103,
-                        reverse_positions=104,
-                        manual_control=107,
-                        program=109,
+                        reverse_positions=107
                     ),
                 ),
             ),
