@@ -401,6 +401,14 @@ mapping: dict[str, TuyaBLECategoryNumberMapping] = {
                     ),
                 ],
             ),
+            **dict.fromkeys(
+                [
+                    "bs3ubslo"
+                ],  # Fingerbot Touch 2
+                [
+                    TuyaBLEHoldTimeMapping(dp_id=103),
+                ],
+            ),
         },
     ),
     "wk": TuyaBLECategoryNumberMapping(

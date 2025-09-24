@@ -280,6 +280,15 @@ mapping: dict[str, TuyaBLECategorySwitchMapping] = {
                     ),
                 ],
             ),
+            **dict.fromkeys(
+                [
+                    "bs3ubslo"
+                ],  # Fingerbot Touch 2
+                [
+                    TuyaBLEFingerbotSwitchMapping(dp_id=1),
+                    TuyaBLEReversePositionsMapping(dp_id=107)
+                ],
+            ),
         },
     ),
     "wk": TuyaBLECategorySwitchMapping(

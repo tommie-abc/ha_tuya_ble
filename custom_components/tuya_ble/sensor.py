@@ -285,6 +285,14 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                     TuyaBLEBatteryMapping(dp_id=105),
                 ],
             ),
+            **dict.fromkeys(
+                [
+                    "bs3ubslo"
+                ],  # Fingerbot Touch 2
+                [
+                    TuyaBLEBatteryMapping(dp_id=115),
+                ],
+            ),
         },
     ),
     "wsdcg": TuyaBLECategorySensorMapping(

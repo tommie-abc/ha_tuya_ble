@@ -179,6 +179,14 @@ mapping: dict[str, TuyaBLECategorySelectMapping] = {
                     TuyaBLEFingerbotModeMapping(dp_id=101),
                 ],
             ),
+            **dict.fromkeys(
+                [
+                    "bs3ubslo"
+                ],  # Fingerbot Touch 2
+                [
+                    TuyaBLEFingerbotModeMapping(dp_id=101),
+                ],
+            ),
         },
     ),
     "wsdcg": TuyaBLECategorySelectMapping(
