@@ -143,6 +143,12 @@
             },
             "clear_zones": {
                 "name": "Clear zones"
+            },
+            "action_1": {
+                "name": "Action 1"
+            },
+            "action_2": {
+                "name": "Action 2"
             }
         },
         "event": {
@@ -212,6 +218,24 @@
             },
             "rain_delay_time": {
                 "name": "Rain delay time"
+            },
+            "touch_duration_1": {
+                "name": "Touch duration 1"
+            },
+            "touch_duration_2": {
+                "name": "Touch duration 2"
+            },
+            "touch_off_duration_1": {
+                "name": "Touch off duration 1"
+            },
+            "touch_off_duration_2": {
+                "name": "Touch off duration 2"
+            },
+            "double_tap_interval_1": {
+                "name": "Double-tap interval 1"
+            },
+            "double_tap_interval_2": {
+                "name": "Double-tap interval 2"
             }
         },
         "select": {
@@ -338,6 +362,22 @@
                     "smart": "Smart",
                     "spot": "Spot",
                     "goto_charge": "Return to dock"
+                }
+            },
+            "fingerbot_mode_1": {
+                "name": "Mode 1",
+                "state": {
+                    "program": "Program",
+                    "push": "Push",
+                    "switch": "Switch"
+                }
+            },
+            "fingerbot_mode_2": {
+                "name": "Mode 2",
+                "state": {
+                    "program": "Program",
+                    "push": "Push",
+                    "switch": "Switch"
                 }
             }
         },
@@ -676,6 +716,24 @@
             },
             "rain_delay": {
                 "name": "Rain delay"
+            },
+            "switch_1": {
+                "name": "Switch 1"
+            },
+            "switch_2": {
+                "name": "Switch 2"
+            },
+            "touch_switch_1": {
+                "name": "Touch switch 1"
+            },
+            "touch_switch_2": {
+                "name": "Touch switch 2"
+            },
+            "switch_invert_1": {
+                "name": "Invert switch 1"
+            },
+            "switch_invert_2": {
+                "name": "Invert switch 2"
             }
         },
         "text": {

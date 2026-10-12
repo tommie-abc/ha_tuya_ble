@@ -563,11 +563,84 @@ mapping: dict[str, TuyaBLECategoryNumberMapping] = {
     ),
     "kg": TuyaBLECategoryNumberMapping(
         products={
+            "bs3ubslo": [  # Fingerbot Touch, two independent channels
+                TuyaBLENumberMapping(
+                    dp_id=103,
+                    description=NumberEntityDescription(
+                        key="touch_duration_1",
+                        icon="mdi:gesture-tap",
+                        native_min_value=100,
+                        native_max_value=10000,
+                        native_step=100,
+                        native_unit_of_measurement=UnitOfTime.MILLISECONDS,
+                        entity_category=EntityCategory.CONFIG,
+                    ),
+                ),
+                TuyaBLENumberMapping(
+                    dp_id=104,
+                    description=NumberEntityDescription(
+                        key="touch_duration_2",
+                        icon="mdi:gesture-tap",
+                        native_min_value=100,
+                        native_max_value=10000,
+                        native_step=100,
+                        native_unit_of_measurement=UnitOfTime.MILLISECONDS,
+                        entity_category=EntityCategory.CONFIG,
+                    ),
+                ),
+                TuyaBLENumberMapping(
+                    dp_id=117,
+                    description=NumberEntityDescription(
+                        key="touch_off_duration_1",
+                        icon="mdi:timer-off",
+                        native_min_value=100,
+                        native_max_value=10000,
+                        native_step=100,
+                        native_unit_of_measurement=UnitOfTime.MILLISECONDS,
+                        entity_category=EntityCategory.CONFIG,
+                    ),
+                ),
+                TuyaBLENumberMapping(
+                    dp_id=118,
+                    description=NumberEntityDescription(
+                        key="touch_off_duration_2",
+                        icon="mdi:timer-off",
+                        native_min_value=100,
+                        native_max_value=10000,
+                        native_step=100,
+                        native_unit_of_measurement=UnitOfTime.MILLISECONDS,
+                        entity_category=EntityCategory.CONFIG,
+                    ),
+                ),
+                TuyaBLENumberMapping(
+                    dp_id=119,
+                    description=NumberEntityDescription(
+                        key="double_tap_interval_1",
+                        icon="mdi:gesture-double-tap",
+                        native_min_value=0,
+                        native_max_value=100,
+                        native_step=1,
+                        native_unit_of_measurement=UnitOfTime.MILLISECONDS,
+                        entity_category=EntityCategory.CONFIG,
+                    ),
+                ),
+                TuyaBLENumberMapping(
+                    dp_id=120,
+                    description=NumberEntityDescription(
+                        key="double_tap_interval_2",
+                        icon="mdi:gesture-double-tap",
+                        native_min_value=0,
+                        native_max_value=100,
+                        native_step=1,
+                        native_unit_of_measurement=UnitOfTime.MILLISECONDS,
+                        entity_category=EntityCategory.CONFIG,
+                    ),
+                ),
+            ],
             **dict.fromkeys(
                 [
                     "mknd4lci",
                     "riecov42",
-                    "bs3ubslo",
                     "gnpbj0bq",
                     "6jcvqwh0",
                 ],  # Fingerbot Plus

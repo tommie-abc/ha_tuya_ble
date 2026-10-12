@@ -73,6 +73,23 @@ def is_fingerbot_in_switch_mode(
     return result
 
 
+def fingerbot_touch_channel_in_mode(
+    mode_dp_id: int, mode: int
+) -> TuyaBLESwitchIsAvailable:
+    """Availability for one Fingerbot Touch channel, keyed on its own mode DP.
+
+    The Fingerbot Touch (bs3ubslo) has two independent channels, each with
+    its own mode DP (101 and 102), so the single ``product.fingerbot.mode``
+    used by the other Fingerbots cannot describe it.
+    """
+
+    def is_available(self: TuyaBLESwitch, product: TuyaBLEProductInfo) -> bool:
+        datapoint = self._device.datapoints[mode_dp_id]
+        return datapoint is None or datapoint.value == mode
+
+    return is_available
+
+
 def is_water_valve_in_switch_mode(
     self: TuyaBLESwitch, product: TuyaBLEProductInfo
 ) -> bool:
@@ -705,11 +722,54 @@ mapping: dict[str, TuyaBLECategorySwitchMapping] = {
     ),
     "kg": TuyaBLECategorySwitchMapping(
         products={
+            "bs3ubslo": [  # Fingerbot Touch, two independent channels
+                TuyaBLESwitchMapping(
+                    dp_id=1,
+                    description=SwitchEntityDescription(key="switch_1"),
+                    is_available=fingerbot_touch_channel_in_mode(101, 1),
+                ),
+                TuyaBLESwitchMapping(
+                    dp_id=2,
+                    description=SwitchEntityDescription(key="switch_2"),
+                    is_available=fingerbot_touch_channel_in_mode(102, 1),
+                ),
+                TuyaBLESwitchMapping(
+                    dp_id=105,
+                    description=SwitchEntityDescription(
+                        key="touch_switch_1",
+                        icon="mdi:gesture-tap",
+                        entity_category=EntityCategory.CONFIG,
+                    ),
+                ),
+                TuyaBLESwitchMapping(
+                    dp_id=106,
+                    description=SwitchEntityDescription(
+                        key="touch_switch_2",
+                        icon="mdi:gesture-tap",
+                        entity_category=EntityCategory.CONFIG,
+                    ),
+                ),
+                TuyaBLESwitchMapping(
+                    dp_id=107,
+                    description=SwitchEntityDescription(
+                        key="switch_invert_1",
+                        icon="mdi:swap-horizontal",
+                        entity_category=EntityCategory.CONFIG,
+                    ),
+                ),
+                TuyaBLESwitchMapping(
+                    dp_id=108,
+                    description=SwitchEntityDescription(
+                        key="switch_invert_2",
+                        icon="mdi:swap-horizontal",
+                        entity_category=EntityCategory.CONFIG,
+                    ),
+                ),
+            ],
             **dict.fromkeys(
                 [
                     "mknd4lci",
                     "riecov42",
-                    "bs3ubslo",
                     "gnpbj0bq",
                     "6jcvqwh0",
                 ],  # Fingerbot Plus

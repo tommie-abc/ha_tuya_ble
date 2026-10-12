@@ -175,7 +175,6 @@ mapping: dict[str, TuyaBLECategoryTextMapping] = {
                 [
                     "mknd4lci",
                     "riecov42",
-                    "bs3ubslo",
                     "gnpbj0bq",
                     "6jcvqwh0",
                 ],  # Fingerbot Plus

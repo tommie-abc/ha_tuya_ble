@@ -55,8 +55,8 @@ See a device marked Experimental you have? We could use real world testing feedb
   </thead>
   <tbody>
     <tr>
-      <td rowspan="8"><strong>Fingerbots</strong></td>
-      <td rowspan="8"><code>szjqr</code></td>
+      <td rowspan="9"><strong>Fingerbots</strong></td>
+      <td rowspan="9"><code>szjqr</code></td>
       <td>Fingerbot</td>
       <td><code>ltak7e1p</code>, <code>y6kttvd6</code>, <code>yrnk7mnn</code>, <code>nvr2rocq</code>, <code>bnt7wajf</code>, <code>rvdceqjh</code>, <code>5xhbk964</code></td>
       <td>Original device, first in category, powered by CR2 battery.</td>
@@ -68,8 +68,13 @@ See a device marked Experimental you have? We could use real world testing feedb
     </tr>
     <tr>
       <td>Fingerbot Plus</td>
-      <td><code>blliqpsj</code>, <code>ndvkgsrm</code>, <code>yiihr7zh</code>, <code>neq16kgd</code>, <code>mknd4lci</code>, <code>riecov42</code>, <code>bs3ubslo</code>, <code>6jcvqwh0</code>, <code>h8kdwywx</code></td>
+      <td><code>blliqpsj</code>, <code>ndvkgsrm</code>, <code>yiihr7zh</code>, <code>neq16kgd</code>, <code>mknd4lci</code>, <code>riecov42</code>, <code>6jcvqwh0</code>, <code>h8kdwywx</code></td>
       <td>Almost same as original, has sensor button for manual control. See programming note below.</td>
+    </tr>
+    <tr>
+      <td>Fingerbot Touch</td>
+      <td><code>bs3ubslo</code></td>
+      <td>Two independent capacitive-touch channels, each with its own mode, touch duration and action/switch entities. Built-in battery with USB type C charging.</td>
     </tr>
     <tr>
       <td>CubeTouch 1s</td>

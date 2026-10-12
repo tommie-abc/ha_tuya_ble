@@ -143,6 +143,12 @@
             },
             "clear_zones": {
                 "name": "Cancella zone"
+            },
+            "action_1": {
+                "name": "Azione 1"
+            },
+            "action_2": {
+                "name": "Azione 2"
             }
         },
         "event": {
@@ -209,6 +215,24 @@
             },
             "rain_delay_time": {
                 "name": "Durata del ritardo per pioggia"
+            },
+            "touch_duration_1": {
+                "name": "Durata del tocco 1"
+            },
+            "touch_duration_2": {
+                "name": "Durata del tocco 2"
+            },
+            "touch_off_duration_1": {
+                "name": "Pausa dopo il tocco 1"
+            },
+            "touch_off_duration_2": {
+                "name": "Pausa dopo il tocco 2"
+            },
+            "double_tap_interval_1": {
+                "name": "Intervallo doppio tocco 1"
+            },
+            "double_tap_interval_2": {
+                "name": "Intervallo doppio tocco 2"
             }
         },
         "select": {
@@ -322,6 +346,22 @@
                     "smart": "Intelligente",
                     "spot": "Localizzato",
                     "goto_charge": "Ritorna alla base"
+                }
+            },
+            "fingerbot_mode_1": {
+                "name": "Modalità 1",
+                "state": {
+                    "program": "Programma",
+                    "push": "Premi",
+                    "switch": "Interruttore"
+                }
+            },
+            "fingerbot_mode_2": {
+                "name": "Modalità 2",
+                "state": {
+                    "program": "Programma",
+                    "push": "Premi",
+                    "switch": "Interruttore"
                 }
             }
         },
@@ -657,6 +697,24 @@
             },
             "rain_delay": {
                 "name": "Ritardo per pioggia"
+            },
+            "switch_1": {
+                "name": "Interruttore 1"
+            },
+            "switch_2": {
+                "name": "Interruttore 2"
+            },
+            "touch_switch_1": {
+                "name": "Interruttore touch 1"
+            },
+            "touch_switch_2": {
+                "name": "Interruttore touch 2"
+            },
+            "switch_invert_1": {
+                "name": "Inverti interruttore 1"
+            },
+            "switch_invert_2": {
+                "name": "Inverti interruttore 2"
             }
         },
         "text": {

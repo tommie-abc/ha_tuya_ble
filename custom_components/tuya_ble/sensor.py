@@ -1006,6 +1006,27 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
     ),
     "kg": TuyaBLECategorySensorMapping(
         products={
+            "bs3ubslo": [  # Fingerbot Touch
+                TuyaBLEBatteryMapping(dp_id=115),
+                TuyaBLESensorMapping(
+                    dp_id=116,
+                    description=SensorEntityDescription(
+                        key="battery_charging",
+                        device_class=SensorDeviceClass.ENUM,
+                        entity_category=EntityCategory.DIAGNOSTIC,
+                        options=[
+                            BATTERY_NOT_CHARGING,
+                            BATTERY_CHARGING,
+                            BATTERY_CHARGED,
+                        ],
+                    ),
+                    icons=[
+                        "mdi:battery",
+                        "mdi:power-plug-battery",
+                        "mdi:battery-check",
+                    ],
+                ),
+            ],
             **dict.fromkeys(
                 ["mknd4lci", "riecov42", "gnpbj0bq", "6jcvqwh0"],  # Fingerbot Plus
                 [

@@ -596,7 +596,6 @@ devices_database: dict[str, TuyaBLECategoryInfo] = {
                 [
                     "mknd4lci",
                     "riecov42",
-                    "bs3ubslo",
                     "gnpbj0bq",
                     "6jcvqwh0",
                 ],  # device product_ids
@@ -616,6 +615,9 @@ devices_database: dict[str, TuyaBLECategoryInfo] = {
             ),
             "4ctjfrzq": TuyaBLEProductInfo(
                 name="Switch Robot",
+            ),
+            "bs3ubslo": TuyaBLEProductInfo(
+                name="Fingerbot Touch",
             ),
         },
     ),

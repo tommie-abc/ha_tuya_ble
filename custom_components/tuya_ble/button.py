@@ -51,6 +51,23 @@ def is_fingerbot_in_push_mode(self: TuyaBLEButton, product: TuyaBLEProductInfo) 
     return result
 
 
+def fingerbot_touch_channel_in_mode(
+    mode_dp_id: int, mode: int
+) -> TuyaBLEButtonIsAvailable:
+    """Availability for one Fingerbot Touch channel, keyed on its own mode DP.
+
+    The Fingerbot Touch (bs3ubslo) has two independent channels, each with
+    its own mode DP (101 and 102), so the single ``product.fingerbot.mode``
+    used by the other Fingerbots cannot describe it.
+    """
+
+    def is_available(self: TuyaBLEButton, product: TuyaBLEProductInfo) -> bool:
+        datapoint = self._device.datapoints[mode_dp_id]
+        return datapoint is None or datapoint.value == mode
+
+    return is_available
+
+
 @dataclass
 class TuyaBLEFingerbotModeMapping(TuyaBLEButtonMapping):
     """Describes availability of a given button"""
@@ -156,11 +173,22 @@ mapping: dict[str, TuyaBLECategoryButtonMapping] = {
     ),
     "kg": TuyaBLECategoryButtonMapping(
         products={
+            "bs3ubslo": [  # Fingerbot Touch, two independent channels
+                TuyaBLEButtonMapping(
+                    dp_id=1,
+                    description=ButtonEntityDescription(key="action_1"),
+                    is_available=fingerbot_touch_channel_in_mode(101, 0),
+                ),
+                TuyaBLEButtonMapping(
+                    dp_id=2,
+                    description=ButtonEntityDescription(key="action_2"),
+                    is_available=fingerbot_touch_channel_in_mode(102, 0),
+                ),
+            ],
             **dict.fromkeys(
                 [
                     "mknd4lci",
                     "riecov42",
-                    "bs3ubslo",
                     "gnpbj0bq",
                     "6jcvqwh0",
                 ],  # Fingerbot Plus
